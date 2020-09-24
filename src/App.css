@@ -2,8 +2,29 @@ h1, h2 {
   text-align: center;
   font-family: 'Ubuntu';
   color : white;
+  font-weight: 800px;
 }
 
 h2 {
-  color : green;
+  color : teal;
+}
+
+.entry {
+  position: absolute;
+  left: 50%;
+  width : 300px;
+  height: 30px;
+  margin-left: -150px;
+  border-radius: 5%/50%;
+  border : none;
+  box-shadow: 2px 3px 5px rgb(0,0,0,0.4);
+}
+
+.entry:focus {
+  outline: none;
+}
+
+.submit-button, img{
+  width : 1em;
+  height: 1em;
 }
