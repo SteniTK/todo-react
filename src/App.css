@@ -10,21 +10,33 @@ h2 {
 }
 
 .entry {
-  position: absolute;
-  left: 50%;
   width : 300px;
   height: 30px;
-  margin-left: -150px;
   border-radius: 5%/50%;
   border : none;
   box-shadow: 2px 3px 5px rgb(0,0,0,0.4);
+  margin: 1em;
 }
 
 .entry:focus {
   outline: none;
 }
 
-.submit-button, img{
-  width : 1em;
-  height: 1em;
+.submit-button {
+  width: 2.5em;
+  height: 2.5em;
+  margin : 1em;
+}
+
+.submit-button:hover {
+  width: 2.5em;
+  height: 2.5em;
+  margin : 1em;
+  transform: translate(0, -0.5em);
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

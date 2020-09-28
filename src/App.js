@@ -6,10 +6,10 @@ function App() {
     <div className="App">
       <h1>TO DO</h1>
       <h2>What would you like to do today?</h2>
-      <input type="text" className="entry"></input>
-      <button className="submit-button">
-        <img src={process.env.PUBLIC_URL + "edit.png"} alt="add-entry"></img>
-      </button>
+      <div class="input">
+        <input type="text" className="entry"></input>
+        <input type="image"  className="submit-button" src={process.env.PUBLIC_URL + "edit.png"} alt="Add entry" />
+      </div>
       {/* list of todos */}
     </div>
   );
