@@ -3,10 +3,12 @@ h1, h2 {
   font-family: 'Ubuntu';
   color : white;
   font-weight: 800px;
+  font-size: 4em;
 }
 
 h2 {
   color : teal;
+  font-size: 3em;
 }
 
 .entry {
