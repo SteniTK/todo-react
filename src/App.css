@@ -42,3 +42,11 @@ h2 {
   flex-direction: row;
   justify-content: center;
 }
+
+span {
+  float:right;
+  font-size : 0.75em;
+  margin : 5px;
+  font-style: italic;
+  color: yellowgreen;
+}

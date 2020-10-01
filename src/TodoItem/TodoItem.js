@@ -4,9 +4,11 @@ import './TodoItem.css';
 class TodoItem extends Component{
     render() {
         return (
-            <li>Item #1
+            <li>
+                {this.props.label}
                 <button>Delete</button>
                 <button>Edit</button>
+                <span>{this.props.status}</span>
             </li>
         );
     }
