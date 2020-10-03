@@ -4,7 +4,7 @@ import TodoItem from '../TodoItem/TodoItem.js';
 class TodoList extends React.Component {
     render() {
         this.todoListElement = this.props.todoEntries.map(
-            (toDo) => (<TodoItem label={toDo.label} status={toDo.status}></TodoItem>)
+            (toDo) => (<TodoItem key={toDo.index} label={toDo.label} status={toDo.status}></TodoItem>)
         );
         return (<ul>
             {this.todoListElement}
