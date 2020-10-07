@@ -1,7 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## TO DO:
+- [ ] On key down/on key press event
+- [ ] delete button (with popup)
+- [ ] change todo status
+- [ ] edit button
+- [ ] retrieve tasks from database
+- [ ] save to database on add
+- [ ] select all and drop down for status
+- [ ] filter todos
+- [ ] color code todos based on status
 - [ ] Change stateless class components to function components to boost performance
+- [ ] Remove ref node for input (uncontrolled component) and change to [controlled component event](https://forum.freecodecamp.org/t/getting-an-input-value-when-form-is-submitted-react/161870/6)
 
 ----
 ## Available Scripts
