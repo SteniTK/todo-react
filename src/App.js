@@ -1,18 +1,15 @@
 import React from 'react';
 import './App.css';
 import TodoList from './TodoList/TodoList.js';
+import getTodoEntries from './dataService.js';
 
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.todoEntries = [
-      {label:"Get garbage", status:"completed"},
-      {label:"Grocery shop", status:"in-progress"}
-    ];
+    this.todoEntries = getTodoEntries();
     this.state = {
       'todoList':this.todoEntries
     };
-    // this.submitEntry = this.submitEntry.bind(this);
   }
 
   submitEntry = (event) => {
@@ -21,7 +18,6 @@ class App extends React.Component {
   }
 
   handleKeyDown = (event) => {
-    console.log("handler called");
     if (event.key === "Enter"){
       this.todoEntries = this.todoEntries.concat({label: this.textInput.value, status: "to-do"});
       this.textInput.value = ''; //how does this work if its not in state?
