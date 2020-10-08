@@ -1,0 +1,21 @@
+.modal-box {
+    border: 2px solid teal;
+    z-index: 1;
+    background-color: blanchedalmond;
+    width: 40%;
+    height: 30%;
+    min-height: 30%;
+    float: left;
+    position: absolute;
+    top: 30%;
+    left:30%;
+    font-size: 2em;
+    color: teal;
+    font-family: 'Ubuntu';
+    text-align: center;
+    padding: 10px;
+}
+
+.modal-box > p {
+    padding-bottom : 10px;
+}

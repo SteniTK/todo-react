@@ -2,9 +2,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## TO DO:
 - [x] On key down/on key press event
-- [ ] delete button (with popup)
+- [x] delete button 
+- [ ] show popup before delete
 - [ ] change todo status
 - [ ] edit button
+- [ ] combine submit and onkeydown button handlers
 - [ ] retrieve tasks from database
 - [ ] save to database on add
 - [ ] select all and drop down for status

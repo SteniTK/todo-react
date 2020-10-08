@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoItem from '../TodoItem/TodoItem.js';
+import Modal from '../utils/Modal/Modal.js';
 
 class TodoList extends React.Component {
     render() {
@@ -7,9 +8,12 @@ class TodoList extends React.Component {
             (toDo, index) => (<TodoItem key={index} id={'todo-'+index.toString()} label={toDo.label} status={toDo.status}
             onDeleteTodo={this.props.onDelete}></TodoItem>)
         );
-        return (<ul>
-            {this.todoListElement}
-          </ul>);
+        return (<>
+            <Modal/>
+            <ul>
+                {this.todoListElement}
+            </ul>
+        </>);
     }
 }
 
