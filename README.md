@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## TO DO:
-- [ ] On key down/on key press event
+- [x] On key down/on key press event
 - [ ] delete button (with popup)
 - [ ] change todo status
 - [ ] edit button
