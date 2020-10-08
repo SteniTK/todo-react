@@ -13,15 +13,22 @@ class App extends React.Component {
   }
 
   submitEntry = (event) => {
-    this.todoEntries = this.todoEntries.concat({label: this.textInput.value, status: "to-do"});
-    this.setState({'todoList':this.todoEntries});
+    const text = this.textInput.value;
+    if( text !== "" ){
+      this.textInput.value = '';
+      this.todoEntries = this.todoEntries.concat({label: text, status: "to-do"});
+      this.setState({'todoList':this.todoEntries});
+    } 
   }
 
   handleKeyDown = (event) => {
     if (event.key === "Enter"){
-      this.todoEntries = this.todoEntries.concat({label: this.textInput.value, status: "to-do"});
-      this.textInput.value = ''; //how does this work if its not in state?
-      this.setState({'todoList':this.todoEntries});
+      const text = this.textInput.value;
+      if(text !== ""){
+        this.todoEntries = this.todoEntries.concat({label: text, status: "to-do"});
+        this.textInput.value = ''; //how does this work if its not in state?
+        this.setState({'todoList':this.todoEntries});
+      } 
     }
   }
 
