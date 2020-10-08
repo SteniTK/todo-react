@@ -1,6 +1,6 @@
 .modal-box {
     border: 2px solid teal;
-    z-index: 1;
+    z-index: 2;
     background-color: blanchedalmond;
     width: 40%;
     height: 30%;
@@ -14,6 +14,7 @@
     font-family: 'Ubuntu';
     text-align: center;
     padding: 10px;
+    box-shadow: 10px 10px 20px gray;
 }
 
 .modal-box > p {

@@ -3,7 +3,7 @@ import './Modal.css';
 
 function Modal() {
     return (
-    <div class="modal-box">
+    <div className="modal-box">
         <p>Are you sure you want to delete?</p>
         <button>No</button>
         <button>Yes</button>
