@@ -10,8 +10,18 @@ class TodoList extends React.Component {
 
     askConfirmationAndDelete = (id) => {
         this.setState({'isShowModal' : true});
-        this.props.onDelete(id);
+        this.toDeleteId = id;
     }
+
+    modalNoHandler = (event) => {
+        this.setState({'isShowModal' : false});
+    }
+
+    modalYesHandler = (event) => {
+        this.props.onDelete(this.toDeleteId);
+        this.setState({'isShowModal' : false});
+    }
+
 
     render() {
         this.todoListElement = this.props.todoEntries.map(
@@ -19,7 +29,7 @@ class TodoList extends React.Component {
             onDeleteTodo={this.askConfirmationAndDelete}></TodoItem>)
         );
         return (<>
-            {(this.state.isShowModal) && <Modal/>};
+            {(this.state.isShowModal) && <Modal noHandler={this.modalNoHandler} yesHandler={this.modalYesHandler}/>};
             <ul>
                 {this.todoListElement}
             </ul>
