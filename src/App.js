@@ -32,11 +32,22 @@ class App extends React.Component {
     }
   }
 
+  getIndexFromId = (id) => {
+    return id.split('-')[1] || -1;
+  }
+
   onDelete = (id) => {
-    const index = id.split('-')[1];
-    console.log(index);
+    const index = this.getIndexFromId(id);
     this.todoEntries.splice(index, 1);
     console.log(this.todoEntries);
+    this.setState({'todoList': this.todoEntries});
+  }
+
+  onStatusChangeHandler = (id, newStatus) => {
+    const index = this.getIndexFromId(id);
+    this.todoEntries[index].status = newStatus;
+    console.log(index);
+    console.log(this.todoEntries[index]);
     this.setState({'todoList': this.todoEntries});
   }
 
@@ -48,7 +59,7 @@ class App extends React.Component {
         <input type="text" className="entry" ref={(input) => this.textInput = input} onKeyDown={this.handleKeyDown}></input>
         <input type="image" className="submit-button" src={process.env.PUBLIC_URL + "edit.png"} alt="Add entry" onClick={this.submitEntry}/>
       </div>
-      <TodoList todoEntries={this.todoEntries} onDelete={this.onDelete}></TodoList>
+      <TodoList todoEntries={this.todoEntries} onDelete={this.onDelete} onStatusChangeHandler={this.onStatusChangeHandler}></TodoList>
     </div>);
   };
 }

@@ -1,6 +1,6 @@
 function getTodoEntries() {
     return [
-      {label:"Get garbage", status:"completed"},
+      {label:"Get garbage", status:"complete"},
       {label:"Grocery shop", status:"in-progress"}
     ];
 }

@@ -3,14 +3,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## TO DO:
 - [x] On key down/on key press event
 - [x] delete button 
-- [ ] show popup before delete
-- [ ] change todo status
+- [x] show popup before delete
+- [x] change todo status
 - [ ] edit button
 - [ ] combine submit and onkeydown button handlers
 - [ ] retrieve tasks from database
 - [ ] save to database on add
 - [ ] select all and drop down for status
 - [ ] filter todos
+- [ ] delete confirmation closer to todo OR make it 3 press confirmation button?
 - [ ] color code todos based on status
 - [ ] Change stateless class components to function components to boost performance
 - [ ] Remove ref node for input (uncontrolled component) and change to [controlled component event](https://forum.freecodecamp.org/t/getting-an-input-value-when-form-is-submitted-react/161870/6)

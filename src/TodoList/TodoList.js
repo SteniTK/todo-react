@@ -22,11 +22,10 @@ class TodoList extends React.Component {
         this.setState({'isShowModal' : false});
     }
 
-
     render() {
         this.todoListElement = this.props.todoEntries.map(
             (toDo, index) => (<TodoItem key={index} id={'todo-'+index.toString()} label={toDo.label} status={toDo.status}
-            onDeleteTodo={this.askConfirmationAndDelete}></TodoItem>)
+            onDeleteTodo={this.askConfirmationAndDelete} onStatusChangeHandler={this.props.onStatusChangeHandler}></TodoItem>)
         );
         return (<>
             {(this.state.isShowModal) && <Modal noHandler={this.modalNoHandler} yesHandler={this.modalYesHandler}/>};

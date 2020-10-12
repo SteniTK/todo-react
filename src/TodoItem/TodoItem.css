@@ -22,5 +22,21 @@ button {
     margin-right: 2px;
     background-color: whitesmoke;
     color: #4a4848;
-    font-style: inherit;
+    font-family: inherit;
+}
+
+select {
+    float: right;
+    border: none;
+    border-radius: 5px;
+    margin-left: 2px;
+    padding: 0.3em;
+    min-width: max-content;
+    margin-right: 2px;
+    background-color: whitesmoke;
+    font-size : 0.75em;
+    font-style: italic;
+    color: yellowgreen;
+    font-family: inherit;
+    background-color: #0c3535;
 }
