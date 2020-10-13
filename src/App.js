@@ -8,27 +8,26 @@ class App extends React.Component {
     super(props);
     this.todoEntries = getTodoEntries();
     this.state = {
-      'todoList':this.todoEntries
+      'todoList':this.todoEntries,
+      'textInput': ""
     };
   }
 
   submitEntry = (event) => {
-    const text = this.textInput.value;
+    const text = this.state.textInput;
     if( text !== "" ){
-      this.textInput.value = '';
       this.todoEntries = this.todoEntries.concat({label: text, status: "to-do"});
-      this.setState({'todoList':this.todoEntries});
+      this.setState({'todoList':this.todoEntries, 'textInput': ""});
     } 
+  }
+
+  onTextEntry = (event) => {
+    this.setState({'textInput': event.target.value});
   }
 
   handleKeyDown = (event) => {
     if (event.key === "Enter"){
-      const text = this.textInput.value;
-      if(text !== ""){
-        this.todoEntries = this.todoEntries.concat({label: text, status: "to-do"});
-        this.textInput.value = ''; //how does this work if its not in state?
-        this.setState({'todoList':this.todoEntries});
-      } 
+      this.submitEntry();
     }
   }
 
@@ -59,7 +58,7 @@ class App extends React.Component {
       <h1>TO DO</h1>
       <h2>What would you like to do today?</h2>
       <div className="input">
-        <input type="text" className="entry" ref={(input) => this.textInput = input} onKeyDown={this.handleKeyDown}></input>
+        <input type="text" className="entry" onChange={this.onTextEntry} onKeyDown={this.handleKeyDown} value={this.state.textInput}></input>
         <input type="image" className="submit-button" src={process.env.PUBLIC_URL + "edit.png"} alt="Add entry" onClick={this.submitEntry}/>
       </div>
       <TodoList todoEntries={this.state.todoList} onDelete={this.onDelete} onStatusChange={this.onStatusChangeHandler} onEdit={this.onEdit}></TodoList>
