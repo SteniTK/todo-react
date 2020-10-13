@@ -40,3 +40,11 @@ select {
     font-family: inherit;
     background-color: #0c3535;
 }
+
+.todo {
+    border: none;
+    font-family: inherit;
+    background-color: teal;
+    color: white;
+    font-size: inherit;
+}
