@@ -5,7 +5,7 @@ class TodoItem extends Component{
 
     constructor(props){
         super(props);
-        this.state = {'label' : this.props.label, 'isReadOnly': true};
+        this.state = {'isReadOnly': true};
     }
 
     onDeleteHandler = (event) => {
@@ -21,7 +21,7 @@ class TodoItem extends Component{
     }
     
     onChange = (event) => {
-       this.setState({'label' : event.target.value});
+       this.props.onEditTodo(this.props.id, event.target.value);
     }
 
     onKeyDownHandler = (event) => {
@@ -34,7 +34,7 @@ class TodoItem extends Component{
         return (
             <li>
                 <input className="todo" type="text" readOnly={this.state.isReadOnly} 
-                    value={this.state.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}/>
+                    value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}/>
                 <button onClick={this.onDeleteHandler}>Delete</button>
                 <button onClick={this.onEditHandler}>Edit</button>
                 <select value={this.props.status} onChange={this.onStatusChangeHandler}>

@@ -24,8 +24,11 @@ class TodoList extends React.Component {
 
     render() {
         this.todoListElement = this.props.todoEntries.map(
-            (toDo, index) => (<TodoItem key={index} id={'todo-'+index.toString()} label={toDo.label} status={toDo.status}
-            onDeleteTodo={this.askConfirmationAndDelete} onStatusChangeHandler={this.props.onStatusChangeHandler}></TodoItem>)
+            (toDo, index) => (
+            <TodoItem key={index} id={'todo-'+index.toString()} label={toDo.label} status={toDo.status}
+            onDeleteTodo={this.askConfirmationAndDelete}
+            onStatusChangeHandler={this.props.onStatusChange}
+            onEditTodo={this.props.onEdit}></TodoItem>)
         );
         return (<>
             {(this.state.isShowModal) && <Modal noHandler={this.modalNoHandler} yesHandler={this.modalYesHandler}/>};

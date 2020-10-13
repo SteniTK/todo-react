@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [x] delete button 
 - [x] show popup before delete
 - [x] change todo status
-- [ ] edit button
+- [x] edit button
+- [X] new bug : delete does not work (sfter delete label is wrong)
 - [ ] combine submit and onkeydown button handlers
 - [ ] retrieve tasks from database
 - [ ] save to database on add
