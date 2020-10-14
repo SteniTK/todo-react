@@ -3,12 +3,12 @@ h1, h2 {
   font-family: 'Ubuntu';
   color : white;
   font-weight: 800px;
-  font-size: 4em;
+  font-size: 4rem;
 }
 
 h2 {
   color : teal;
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .entry {
@@ -29,14 +29,14 @@ h2 {
 }
 
 .submit-button {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.5rem;
+  height: 2.5rem;
   margin : 1em;
 }
 
 .submit-button:hover {
-  width: 2.5em;
-  height: 2.5em;
+  width: 2.5rem;
+  height: 2.5rem;
   margin : 1em;
   transform: translate(0, -0.5em);
 }
@@ -49,7 +49,7 @@ h2 {
 
 span {
   float:right;
-  font-size : 0.75em;
+  font-size : 0.75rem;
   margin : 5px;
   font-style: italic;
   color: yellowgreen;
