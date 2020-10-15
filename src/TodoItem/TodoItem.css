@@ -1,14 +1,14 @@
 li {
     list-style: none;
     font-family: 'Ubuntu';
-    font-size: 2em;
+    font-size: 2rem;
     background-color: teal;
     border: none;
     border-radius: 10px;
     margin: 0.5em auto 0.5em auto;
     padding: 0.5em;
     text-align: left;
-    width: 60%;
+    width: 70%;
     color: white;
 }
 
@@ -16,8 +16,8 @@ button {
     border: none;
     border-radius: 5px;
     margin-left: 2px;
-    padding: 0.3em;
-    min-width: 5em;
+    padding: 0.1em;
+    min-width: 5rem;
     margin-right: 2px;
     background-color: whitesmoke;
     color: #4a4848;
@@ -45,9 +45,28 @@ select {
     background-color: teal;
     color: white;
     font-size: inherit;
+    width: 40%;
 }
 
 .item-container {
     display: flex;
     float: right;
+}
+
+@media only screen and (max-width:590px) {
+    .item-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    select {
+        grid-row: 1/2;
+        grid-column: 1/-1;
+        margin-bottom: 0.3em;
+    }
+
+    li {
+       line-height: 3em; /* how does this work ? */
+    }
 }
