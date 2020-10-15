@@ -13,7 +13,6 @@ li {
 }
 
 button {
-    float: right;
     border: none;
     border-radius: 5px;
     margin-left: 2px;
@@ -26,7 +25,6 @@ button {
 }
 
 select {
-    float: right;
     border: none;
     border-radius: 5px;
     margin-left: 2px;
@@ -47,4 +45,9 @@ select {
     background-color: teal;
     color: white;
     font-size: inherit;
+}
+
+.item-container {
+    display: flex;
+    float: right;
 }

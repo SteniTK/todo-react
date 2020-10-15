@@ -39,13 +39,15 @@ class TodoItem extends Component{
             <li>
                 <input className="todo" type="text" readOnly={this.state.isReadOnly} ref={this.labelRef}
                     value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}/>
-                <button onClick={this.onDeleteHandler}>Delete</button>
-                <button onClick={this.onEditHandler}>Edit</button>
-                <select value={this.props.status} onChange={this.onStatusChangeHandler}>
-                    <option>to-do</option>
-                    <option>in-progress</option>
-                    <option>complete</option>
-                </select>
+                <div className="item-container">
+                    <select value={this.props.status} onChange={this.onStatusChangeHandler}>
+                            <option>to-do</option>
+                            <option>in-progress</option>
+                            <option>complete</option>
+                        </select>
+                    <button onClick={this.onEditHandler}>Edit</button>
+                    <button onClick={this.onDeleteHandler}>Delete</button>
+                </div>
             </li>
         );
     }
