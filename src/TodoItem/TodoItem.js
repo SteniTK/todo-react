@@ -34,13 +34,25 @@ class TodoItem extends Component{
         }
     }
 
+    getColor(status) {
+        const statusToColor = {
+            'complete' : 'teal',
+            'in-progress' : '#d2c421',
+            'to-do' : '#de1f4bfc'
+        };
+        return statusToColor[status];
+    }
+
     render() {
-        return (
-            <li>
+        const bgColor = this.getColor(this.props.status);
+        return (  
+            <li style={{backgroundColor:bgColor}}>
                 <input className="todo" type="text" readOnly={this.state.isReadOnly} ref={this.labelRef}
-                    value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}/>
+                    value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}
+                    style={{backgroundColor:bgColor}}/>
                 <div className="item-container">
-                    <select value={this.props.status} onChange={this.onStatusChangeHandler}>
+                    <select value={this.props.status} onChange={this.onStatusChangeHandler}
+                    style={{color:bgColor}}>
                             <option>to-do</option>
                             <option>in-progress</option>
                             <option>complete</option>
