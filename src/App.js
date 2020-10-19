@@ -36,7 +36,6 @@ class App extends React.Component {
   }
 
   onDelete = (id) => {
-    console.log("Hurray you're here");
     const index = this.getIndexFromId(id);
     this.todoEntries.splice(index, 1);
     this.setState({'todoList': this.todoEntries});

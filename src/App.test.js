@@ -13,18 +13,20 @@ test('renders Headers & input', () => {
 
 test('delete todo item', () => {
   const wrapper = mount(<App></App>);
+  var numberOfItems = wrapper.find('li').length;
+  // find first todoItem and click on delete
   let todeleteItem = wrapper.find('#todo-0');
   const todeleteItemLabel = todeleteItem.find('input').props().value;
-  console.log(todeleteItemLabel);
   const deleteButton = todeleteItem.find('button').at(1);
   deleteButton.props().onClick();
-  
   // modal function is called but delete has not happened yet.
-  // unable to find modal in wrapper
-  
-  const yesButton = wrapper.debug();
-  console.log(yesButton);
-  // console.log(wrapper.find('li').length);
-  // let nowFirstItem = wrapper.find('#todo-0').find('input').props().value;
-  // console.log(nowFirstItem);
+  wrapper.update();    
+  // give modal yes
+  wrapper.find('.modal-box>button').at(1).props().onClick();
+  // update todo list render
+  wrapper.update();
+
+  expect(wrapper.find('li').length).toBe(numberOfItems-1);
+  let nowFirstItem = wrapper.find('#todo-0').find('input').props().value;
+  expect(nowFirstItem).not.toEqual(todeleteItemLabel);
 });

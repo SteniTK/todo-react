@@ -11,8 +11,6 @@ class TodoItem extends Component{
     }
 
     onDeleteHandler = (event) => {
-        console.log("deleting", this.props.id);
-        console.log(this.props.onDeleteTodo.toString());
         this.props.onDeleteTodo(this.props.id);
     }
 
