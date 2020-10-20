@@ -47,6 +47,7 @@ class TodoItem extends Component{
         const bgColor = this.getColor(this.props.status);
         return (  
             <li style={{backgroundColor:bgColor}}>
+                <input type="checkbox"></input>
                 <input className="todo" type="text" readOnly={this.state.isReadOnly} ref={this.labelRef}
                     value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}
                     style={{backgroundColor:bgColor}}/>

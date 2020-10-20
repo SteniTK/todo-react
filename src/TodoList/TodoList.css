@@ -1,0 +1,25 @@
+.select-all-input {
+    font-size: 1.5rem;
+    font-family: 'Ubuntu';
+    margin: 0.5em auto 0.5em auto;
+    padding: 0.5em;
+    text-align: left;
+    width: 60%;
+    color: teal;
+    max-width: calc(630px - 2.75em);
+    display: flex;
+    line-height: 1.5em;
+}
+
+.select-all-input>input {
+    margin-right: 0.7em;
+}
+
+.select-all-input>label {
+    margin-right : 2em;
+    font-weight: bolder;
+}
+
+.select-all-input>select{
+    background-color: teal;
+}
