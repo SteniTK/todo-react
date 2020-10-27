@@ -37,7 +37,7 @@ class TodoList extends React.Component {
             <div className="select-all-input">
                 <input type="checkbox" name="select-all" value="select-all" onChange={this.props.onSelectAll}></input>
                 <label>Select All</label>
-                <select>
+                <select onChange={this.props.changeStatusAll}>
                     <option>to-do</option>
                     <option>in-progress</option>
                     <option>complete</option>

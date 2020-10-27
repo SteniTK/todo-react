@@ -17,6 +17,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - [ ] Change stateless class components to function components to boost performance
 - [x] Remove ref node for input (uncontrolled component) and change to state(controlled component event)
 
+## CSS bugs:
+- [ ] text length too long is getting hidden
+- [ ] on mobile view, the modal buttons are overflowing
+
 ----
 ## Available Scripts
 

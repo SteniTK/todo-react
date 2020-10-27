@@ -12,9 +12,8 @@ class App extends React.Component {
     var listTodo = _.each(this.todoEntries, (todoElement)=> {
       todoElement['isChecked'] = false;
     });
-    console.log(listTodo);
     this.state = {
-      'todoList':this.todoEntries,
+      'todoList':listTodo,
       'textInput': ""
     };
   }
@@ -72,6 +71,15 @@ class App extends React.Component {
     this.setState({'todoList': this.todoEntries});
   }
 
+  changeStatusAll = (event) => {
+    this.todoEntries = _.each(this.todoEntries, (todoElement) => {
+      if (todoElement.isChecked) {
+        todoElement.status = event.target.value;
+      }
+    });
+    this.setState({'todoList': this.todoEntries});
+  }
+
   render () {
     return (<div className="App">
       <h1>TO DO</h1>
@@ -81,7 +89,7 @@ class App extends React.Component {
         <input type="image" className="submit-button" src={process.env.PUBLIC_URL + "edit.png"} alt="Add entry" onClick={this.submitEntry}/>
       </div>
       <TodoList todoEntries={this.state.todoList} onDelete={this.onDelete} onStatusChange={this.onStatusChangeHandler} onEdit={this.onEdit}
-      onSelectAll={this.onSelectAllClick} selectSingleTodo={this.selectSingleTodo}></TodoList>
+      onSelectAll={this.onSelectAllClick} selectSingleTodo={this.selectSingleTodo} changeStatusAll={this.changeStatusAll}></TodoList>
     </div>);
   };
 }
