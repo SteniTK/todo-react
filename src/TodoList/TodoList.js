@@ -6,7 +6,7 @@ import './TodoList.css';
 class TodoList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {'isShowModal' : false};
+        this.state = {'isShowModal' : false, 'isSelectedAll' : false};
     }
 
     askConfirmationAndDelete = (id) => {
@@ -27,6 +27,7 @@ class TodoList extends React.Component {
         this.todoListElement = this.props.todoEntries.map(
             (toDo, index) => (
             <TodoItem key={index} id={'todo-'+index.toString()} label={toDo.label} status={toDo.status}
+            isChecked={toDo.isChecked} selectSingleTodo={this.props.selectSingleTodo}
             onDeleteTodo={this.askConfirmationAndDelete}
             onStatusChangeHandler={this.props.onStatusChange}
             onEditTodo={this.props.onEdit}></TodoItem>)
@@ -34,8 +35,8 @@ class TodoList extends React.Component {
         return (<>
             {(this.state.isShowModal) && <Modal noHandler={this.modalNoHandler} yesHandler={this.modalYesHandler}/>}
             <div className="select-all-input">
-                <input type="checkbox" name="select-all" value="select-all"></input>
-                <label for="select-all">Select All</label>
+                <input type="checkbox" name="select-all" value="select-all" onChange={this.props.onSelectAll}></input>
+                <label>Select All</label>
                 <select>
                     <option>to-do</option>
                     <option>in-progress</option>

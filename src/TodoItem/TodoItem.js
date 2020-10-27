@@ -43,11 +43,15 @@ class TodoItem extends Component{
         return statusToColor[status];
     }
 
+    selectSingleTodo = (event) => {
+        this.props.selectSingleTodo(this.props.id, event.target.checked);
+    }
+
     render() {
         const bgColor = this.getColor(this.props.status);
         return (  
             <li style={{backgroundColor:bgColor}}>
-                <input type="checkbox"></input>
+                <input type="checkbox" checked={this.props.isChecked} onChange={this.selectSingleTodo}></input>
                 <input className="todo" type="text" readOnly={this.state.isReadOnly} ref={this.labelRef}
                     value={this.props.label} onChange={this.onChange} onKeyDown={this.onKeyDownHandler}
                     style={{backgroundColor:bgColor}}/>
